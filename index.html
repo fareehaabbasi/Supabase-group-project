@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>SkillSphere | Your Skill partner</title>
+    <!-- FAVICON ICON -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- ANIMATE.CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- CUSTOM CSS  -->
+     <style>
+         :root {
+            --main-theme: #000000;
+            --peach: #E0AFA0;
+            --purple: #A87A87;
+            --green: #C5CEC1;
+        }
+
+        body {
+            background-color: var(--main-theme);
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: var(--peach);
+        }
+
+        .navbar-logo {
+            height: 70px;
+        }
+
+        .navbar ul li a:hover {
+            animation: rubberBand 1s;
+            text-decoration: underline 2px solid black;
+        }
+
+        .button {
+            background-color: var(--purple);
+        }
+
+        .button:hover {
+            background-color: #936881;
+            animation: pulse 1s;
+        }
+     </style>
+</head>
+<body>
+      <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex justify-content-between w-100 fs-5 px-4">
+                    <ul class="navbar-nav d-flex justify-content-evenly w-100 fw-bold">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#mid-sec">COURSES</a>
+                        </li>
+                        <button class="button btn"><a
+                                class="link-underline link-underline-opacity-0 text-black fw-semibold"
+                                href="signup.html" role="button">SIGNUP</a></button>
+                        <button class="button btn"><a
+                                class="link-underline link-underline-opacity-0 text-black fw-semibold" href="login.html"
+                                role="button">LOGIN</a></button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+</body>
+</html>
