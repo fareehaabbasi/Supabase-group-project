@@ -47,6 +47,86 @@
             background-color: #936881;
             animation: pulse 1s;
         }
+
+        /* HERO SECTION */
+        #hero {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            overflow: hidden;
+            background-color: var(--main-theme);
+        }
+
+        .hero-slide {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
+                url('https://cdn.pixabay.com/photo/2020/04/02/22/05/home-office-4996834_1280.jpg') center/cover no-repeat;
+            animation: fadeBackground 6s infinite alternate;
+        }
+
+        .carousel-item:nth-child(2) .hero-slide {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://cdn.pixabay.com/photo/2017/07/31/11/44/laptop-2557571_1280.jpg');
+        }
+
+        .carousel-item:nth-child(3) .hero-slide {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://cdn.pixabay.com/photo/2015/09/28/21/50/entrepreneur-962848_1280.jpg');
+        }
+
+        @keyframes fadeBackground {
+            from {
+                opacity: 0.95;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ✅ FIXED ARROWS */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(224, 175, 160, 0.7); /* peach translucent */
+            background-size: 40%, 40%;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background-image: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-control-prev-icon::before,
+        .carousel-control-next-icon::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .carousel-control-prev-icon::before {
+            content: "\f104"; /* Font Awesome left arrow */
+        }
+
+        .carousel-control-next-icon::before {
+            content: "\f105"; /* Font Awesome right arrow */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 8%;
+        }
+
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            background-color: rgba(224, 175, 160, 1);
+        }
+
+         /* ✅ INDICATORS FIXED (bottom dots) */
+        .carousel-indicators [data-bs-target] { background-color: var(--peach); }
+
      </style>
 </head>
 <body>
@@ -83,6 +163,63 @@
             </div>
         </div>
     </nav>
+
+     <!-- HERO SECTION (Slider) -->
+    <section id="hero">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active text-center text-white">
+                    <div class="hero-slide d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="animate__animated animate__fadeInDown fw-bold">Empower Your Future with <span
+                                style="color: var(--peach);">SkillSphere</span></h1>
+                        <p class="animate__animated animate__fadeInUp mt-3 fs-5">Your trusted partner in learning and
+                            mastering new skills.</p>
+                        <a href="signup.html" class="btn button mt-3 px-4 py-2 fw-semibold">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item text-center text-white">
+                    <div class="hero-slide d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="animate__animated animate__fadeInDown fw-bold">Learn from <span
+                                style="color: var(--peach);">Expert Mentors</span></h1>
+                        <p class="animate__animated animate__fadeInUp mt-3 fs-5">Join live sessions and interactive
+                            workshops.</p>
+                        <a href="about.html" class="btn button mt-3 px-4 py-2 fw-semibold">Explore More</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item text-center text-white">
+                    <div class="hero-slide d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="animate__animated animate__fadeInDown fw-bold">Upgrade Your Skills with <span
+                                style="color: var(--peach);">Real Projects</span></h1>
+                        <p class="animate__animated animate__fadeInUp mt-3 fs-5">Build hands-on experience and grow your
+                            portfolio.</p>
+                        <a href="#mid-sec" class="btn button mt-3 px-4 py-2 fw-semibold">Meet Our Faculty</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+        </div>
+    </section>
 
 
 </body>
