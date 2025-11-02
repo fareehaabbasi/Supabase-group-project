@@ -156,12 +156,22 @@
             color: #000;
             transform: translateY(-10px);
             box-shadow: 0 10px 25px rgba(224, 175, 160, 0.3);
-               border: 6px solid rgba(255, 255, 255, 0.5);
-            animation: pulse 1s;
+            border: 6px solid rgba(255, 255, 255, 0.5);
         }
 
+        /* Add animate.css animation using a pseudo-element on hover */
+        .why-card:hover {
+            animation: none;
+            /* remove CSS-level animation to prevent clash */
+        }
+
+        .why-card:hover {
+            animation: none !important;
+        }
+
+
         /* Icon color change on hover */
-        .why-card:hover i{
+        .why-card:hover i {
             color: #000;
         }
 
@@ -297,7 +307,7 @@
                                 style="color: var(--peach);">SkillSphere</span></h1>
                         <p class="animate__animated animate__fadeInUp mt-3 fs-5">Your trusted partner in learning and
                             mastering new skills.</p>
-                        <a href="signup.html" class="btn button mt-3 px-4 py-2 fw-semibold">Get Started</a>
+                        <a href="signup-or-login.html" class="btn button mt-3 px-4 py-2 fw-semibold">Get Started</a>
                     </div>
                 </div>
 
@@ -308,7 +318,7 @@
                                 style="color: var(--peach);">Expert Mentors</span></h1>
                         <p class="animate__animated animate__fadeInUp mt-3 fs-5">Join live sessions and interactive
                             workshops.</p>
-                        <a href="about.html" class="btn button mt-3 px-4 py-2 fw-semibold">Explore More</a>
+                        <a href="signup-or-login.html" class="btn button mt-3 px-4 py-2 fw-semibold">Explore More</a>
                     </div>
                 </div>
 
@@ -319,7 +329,7 @@
                                 style="color: var(--peach);">Real Projects</span></h1>
                         <p class="animate__animated animate__fadeInUp mt-3 fs-5">Build hands-on experience and grow your
                             portfolio.</p>
-                        <a href="#mid-sec" class="btn button mt-3 px-4 py-2 fw-semibold">Meet Our Faculty</a>
+                        <a href="s" class="btn button mt-3 px-4 py-2 fw-semibold">Meet Our Faculty</a>
                     </div>
                 </div>
 
@@ -456,8 +466,9 @@
             </div>
         </div>
     </footer>
-
+    <!-- CUSTOM JAVASCRIPT -->
     <script>
+        // NAVBAR SCROLL
         window.addEventListener("scroll", function () {
             const nav = document.querySelector(".navbar");
             if (window.scrollY > 50) {
@@ -467,6 +478,18 @@
                 nav.style.backgroundColor = "var(--peach)";
             }
         });
+
+        // SECOND SECTION CARD ANIMATION  
+        document.querySelectorAll(".why-card").forEach(card => {
+            card.addEventListener("mouseenter", () => {
+                card.classList.add("animate__animated", "animate__pulse");
+            });
+            card.addEventListener("animationend", () => {
+                card.classList.remove("animate__animated", "animate__pulse");
+            });
+        });
+
+
     </script>
 
     <!-- BOOTSTRAP JS -->
