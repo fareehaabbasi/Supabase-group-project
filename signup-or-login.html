@@ -64,16 +64,24 @@
 
       /* Text Overlay */
       .overlay-text {
-        position: relative;
-        z-index: 1;
+        position: fixed; /* <-- this is important change */
+        top: 20px; /* margin ki jagah top & left use karo */
+        left: 20px;
+        right: auto;
+        left: 20px;
+        z-index: 9999;
         color: var(--secondary);
         font-size: 2rem;
         font-weight: 700;
         letter-spacing: 1px;
         text-transform: uppercase;
         font-family: "Poppins", sans-serif;
-        margin-left: 1vw;
-        margin-top: 1vw;
+      }
+
+      @media (max-width: 768px) {
+        .overlay-text {
+          font-size: 1.6rem;
+        }
       }
 
       /* Right Side (Form) */
@@ -93,9 +101,19 @@
         border: 1px solid var(--accent);
         border-radius: 20px;
         box-shadow: 0 0 25px rgba(232, 169, 152, 0.2);
-        padding: 2.5rem;
+        padding: 2rem;
         width: 100%;
-        max-width: 550px;
+        max-width: 450px;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .auth-card::-webkit-scrollbar {
+        width: 6px;
+      }
+      .auth-card::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
       }
 
       /* Nav Tabs */
@@ -160,8 +178,8 @@
 
       /* Footer */
       .footer-text {
-        margin-top: 1rem;
-        font-size: 0.9rem;
+        margin-top: 0.7rem;
+        font-size: 0.85rem;
         color: #aaa;
       }
 
@@ -323,7 +341,9 @@
                   />
                 </div>
                 <div class="mb-3 position-relative">
-                  <label for="signupPassword" class="form-label">Password</label>
+                  <label for="signupPassword" class="form-label"
+                    >Password</label
+                  >
                   <input
                     type="password"
                     class="form-control"
@@ -451,92 +471,91 @@
 
       //----------  Login Functionality---------//
       //---------Login authentication
-let loginForm = document.getElementById("login-form");
+      let loginForm = document.getElementById("login-form");
 
-let loginEmail = document.getElementById("L-email");
-let loginPassword = document.getElementById("L-password");
+      let loginEmail = document.getElementById("L-email");
+      let loginPassword = document.getElementById("L-password");
 
-async function login(e) {
-  e.preventDefault();
+      async function login(e) {
+        e.preventDefault();
 
-  if (loginEmail.value && loginPassword.value) {
-    showLoader();
-    try {
-      const { data, error } = await client.auth.signInWithPassword({
-        email: loginEmail.value,
-        password: loginPassword.value,
-      });
-      if (error) throw error;
+        if (loginEmail.value && loginPassword.value) {
+          showLoader();
+          try {
+            const { data, error } = await client.auth.signInWithPassword({
+              email: loginEmail.value,
+              password: loginPassword.value,
+            });
+            if (error) throw error;
 
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
+            const Toast = Swal.mixin({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+              },
+            });
 
-      Toast.fire({
-        icon: "success",
-        title: "Login successful!",
-      });
+            Toast.fire({
+              icon: "success",
+              title: "Login successful!",
+            });
 
-      setTimeout(() => {
-        window.location.href = "home.html";
-      }, 1500);
-    } catch (error) {
-      console.error(error);
-      if (loginEmail.value === "" || loginPassword.value === "") {
-        Swal.fire({
-          icon: "warning",
-          title: "Missing Fields",
-          text: "Please fill all fields",
-        });
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Login Failed",
-          text: error.message || "Something went wrong 😢",
-        });
+            setTimeout(() => {
+              window.location.href = "home.html";
+            }, 1500);
+          } catch (error) {
+            console.error(error);
+            if (loginEmail.value === "" || loginPassword.value === "") {
+              Swal.fire({
+                icon: "warning",
+                title: "Missing Fields",
+                text: "Please fill all fields",
+              });
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Login Failed",
+                text: error.message || "Something went wrong 😢",
+              });
+            }
+          } finally {
+            hideLoader();
+          }
+        } else {
+          Swal.fire({
+            icon: "warning",
+            title: "Missing Fields",
+            text: "Please fill all fields",
+          });
+        }
       }
-    } finally {
-      hideLoader();
-    }
-  } else {
-    Swal.fire({
-      icon: "warning",
-      title: "Missing Fields",
-      text: "Please fill all fields",
-    });
-  }
-}
 
-loginForm && loginForm.addEventListener("submit", login);
+      loginForm && loginForm.addEventListener("submit", login);
 
-// -------- Toggle Eye Button -------- //
-const toggleBtns = document.querySelectorAll(".toggle-eye");
+      // -------- Toggle Eye Button -------- //
+      const toggleBtns = document.querySelectorAll(".toggle-eye");
 
-toggleBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    // Find the related input field (previous sibling)
-    const input = btn.previousElementSibling;
+      toggleBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Find the related input field (previous sibling)
+          const input = btn.previousElementSibling;
 
-    if (input.type === "password") {
-      input.type = "text";
-      btn.classList.remove("fa-eye-slash");
-      btn.classList.add("fa-eye");
-    } else {
-      input.type = "password";
-      btn.classList.remove("fa-eye");
-      btn.classList.add("fa-eye-slash");
-    }
-  });
-});
-
+          if (input.type === "password") {
+            input.type = "text";
+            btn.classList.remove("fa-eye-slash");
+            btn.classList.add("fa-eye");
+          } else {
+            input.type = "password";
+            btn.classList.remove("fa-eye");
+            btn.classList.add("fa-eye-slash");
+          }
+        });
+      });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
