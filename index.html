@@ -136,43 +136,43 @@
             background-color: var(--peach);
         }
 
-       /* SECOND SECTION */
-.text-peach {
-  color: var(--peach);
-}
+        /* SECOND SECTION */
+        .text-peach {
+            color: var(--peach);
+        }
 
-/* Base card design */
-.why-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 6px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.4s ease;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-  cursor: pointer;
-}
+        /* Base card design */
+        .why-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 6px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+        }
 
-.why-card:hover {
-  background: var(--peach);
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(224, 175, 160, 0.3);
-  border: 6px solid rgba(255, 255, 255, 0.5);
-  animation: none !important;
-}
+        .why-card:hover {
+            background: var(--peach);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(224, 175, 160, 0.3);
+            border: 6px solid rgba(255, 255, 255, 0.5);
+            animation: none !important;
+        }
 
-/* ✅ apply color to all inner text & icons when card hovered */
-.why-card:hover, 
-.why-card:hover i, 
-.why-card:hover h5, 
-.why-card:hover p {
-  color: #000;
-}
+        /* ✅ apply color to all inner text & icons when card hovered */
+        .why-card:hover,
+        .why-card:hover i,
+        .why-card:hover h5,
+        .why-card:hover p {
+            color: #000;
+        }
 
-/* Smooth transitions for all elements */
-.why-card,
-.why-card i,
-.why-card h5,
-.why-card p {
-  transition: all 0.4s ease;
-}
+        /* Smooth transitions for all elements */
+        .why-card,
+        .why-card i,
+        .why-card h5,
+        .why-card p {
+            transition: all 0.4s ease;
+        }
 
 
         /*FOOTER */
@@ -471,22 +471,22 @@
             }
         });
 
-       // SECOND SECTION CARD ANIMATION
-document.querySelectorAll(".why-card").forEach(card => {
-  // Run hover animation only once per hover in
-  card.addEventListener("mouseenter", () => {
-    if (!card.classList.contains("is-animating")) {
-      card.classList.add("animate__animated", "animate__pulse", "is-animating");
-    }
-  });
+        // SECOND SECTION CARD ANIMATION
+        document.querySelectorAll(".why-card").forEach(card => {
+            // Run hover animation only once per hover in
+            card.addEventListener("mouseenter", () => {
+                if (!card.classList.contains("is-animating")) {
+                    card.classList.add("animate__animated", "animate__pulse", "is-animating");
+                }
+            });
 
-  // When animation finishes, clean up
-  card.addEventListener("animationend", (e) => {
-    if (e.animationName === "pulse") {
-      card.classList.remove("animate__animated", "animate__pulse", "is-animating");
-    }
-  });
-});
+            // When animation finishes, clean up
+            card.addEventListener("animationend", (e) => {
+                if (e.animationName === "pulse") {
+                    card.classList.remove("animate__animated", "animate__pulse", "is-animating");
+                }
+            });
+        });
 
     </script>
 
