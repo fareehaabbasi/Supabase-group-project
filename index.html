@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillSphere | Your Skill partner</title>
     <!-- FAVICON ICON -->
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <!-- BOOTSTRAP CDN -->
     <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <!-- FontAwesome Icon CDN -->
@@ -26,13 +26,22 @@
             background-color: var(--main-theme);
         }
 
+        /* ALL HEADINGS */
+        .heading span {
+            color: var(--peach);
+        }
+
         /* NAVBAR */
         .navbar {
-            background-color: var(--peach);
+            /* background-color: var(--peach); */
+            background-color: gray;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .navbar-logo {
-            height: 70px;
+            height: 80px;
         }
 
         .navbar ul li a:hover {
@@ -89,7 +98,7 @@
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
             background-color: rgba(224, 175, 160, 0.7);
-            /* peach translucent */
+
             background-size: 40%, 40%;
             border-radius: 50%;
             width: 50px;
@@ -128,10 +137,42 @@
             background-color: rgba(224, 175, 160, 1);
         }
 
-        /* ✅ INDICATORS FIXED (bottom dots) */
         .carousel-indicators [data-bs-target] {
             background-color: var(--peach);
         }
+
+
+        /* SECOND SECTION */
+        .why-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 6px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            color: var(--peach);
+        }
+
+        .why-card:hover {
+            background: var(--peach);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(224, 175, 160, 0.3);
+            border: 6px solid rgba(255, 255, 255, 0.5);
+            animation: pulse 1s;
+        }
+
+        .why-card:hover i,
+        .why-card:hover h5,
+        .why-card:hover p {
+            color: #000 !important;
+        }
+
+        .why-card,
+        .why-card i,
+        .why-card h5,
+        .why-card p {
+            transition: all 0.4s ease;
+        }
+
 
         /*FOOTER */
         .footer {
@@ -215,7 +256,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="logo" class="navbar-logo">
+                <img src="assets/images/logo.png" alt="logo" class="navbar-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -237,8 +278,10 @@
                                 class="link-underline link-underline-opacity-0 text-black fw-semibold"
                                 href="signup-or-login.html" role="button">SIGNUP</a></button>
                         <button class="button btn"><a
-                                class="link-underline link-underline-opacity-0 text-black fw-semibold" href="signup-or-login.html"
-                                role="button">LOGIN</a></button>
+                                class="link-underline link-underline-opacity-0 text-black fw-semibold"
+                                href="signup-or-login.html" role="button">LOGIN</a></button>
+                        <li><i class="text-black py-2 fa-solid fa-right-from-bracket"></i></li>
+                        <li><i class="text-black py-2  fa-solid fa-user"></i></li>
                     </ul>
                 </div>
             </div>
@@ -253,33 +296,37 @@
                 <!-- Slide 1 -->
                 <div class="carousel-item active text-center text-white">
                     <div class="hero-slide d-flex flex-column justify-content-center align-items-center">
-                        <h1 class="animate__animated animate__fadeInDown fw-bold">Empower Your Future with <span
-                                style="color: var(--peach);">SkillSphere</span></h1>
-                        <p class="animate__animated animate__fadeInUp mt-3 fs-5">Your trusted partner in learning and
+                        <h1 class="heading text-white animate__fadeInDown fw-bold">Empower Your Future with
+                            <span>SkillSphere</span>
+                        </h1>
+                        <p class="text-white animate__animated animate__fadeInUp mt-3 fs-5">Your trusted partner in
+                            learning and
                             mastering new skills.</p>
-                        <a href="signup.html" class="btn button mt-3 px-4 py-2 fw-semibold">Get Started</a>
+                        <a href="signup-or-login.html" class="btn button mt-3 px-4 py-2 fw-semibold">Get Started</a>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
                 <div class="carousel-item text-center text-white">
                     <div class="hero-slide d-flex flex-column justify-content-center align-items-center">
-                        <h1 class="animate__animated animate__fadeInDown fw-bold">Learn from <span
-                                style="color: var(--peach);">Expert Mentors</span></h1>
-                        <p class="animate__animated animate__fadeInUp mt-3 fs-5">Join live sessions and interactive
+                        <h1 class="heading text-white animate__fadeInDown fw-bold">Learn from <span>Expert
+                                Mentors</span></h1>
+                        <p class="text-white animate__animated animate__fadeInUp mt-3 fs-5">Join live sessions and
+                            interactive
                             workshops.</p>
-                        <a href="about.html" class="btn button mt-3 px-4 py-2 fw-semibold">Explore More</a>
+                        <a href="signup-or-login.html" class="btn button mt-3 px-4 py-2 fw-semibold">Explore More</a>
                     </div>
                 </div>
 
                 <!-- Slide 3 -->
                 <div class="carousel-item text-center text-white">
                     <div class="hero-slide d-flex flex-column justify-content-center align-items-center">
-                        <h1 class="animate__animated animate__fadeInDown fw-bold">Upgrade Your Skills with <span
-                                style="color: var(--peach);">Real Projects</span></h1>
-                        <p class="animate__animated animate__fadeInUp mt-3 fs-5">Build hands-on experience and grow your
+                        <h1 class="heading text-white animate__fadeInDown fw-bold">Upgrade Your Skills with <span>Real
+                                Projects</span></h1>
+                        <p class="text-white animate__animated animate__fadeInUp mt-3 fs-5">Build hands-on experience
+                            and grow your
                             portfolio.</p>
-                        <a href="#mid-sec" class="btn button mt-3 px-4 py-2 fw-semibold">Meet Our Faculty</a>
+                        <a href="s" class="btn button mt-3 px-4 py-2 fw-semibold">Meet Our Faculty</a>
                     </div>
                 </div>
 
@@ -301,6 +348,57 @@
             </div>
         </div>
     </section>
+
+
+    <!-- SECOND SECTION -->
+    <section class="why-section text-center text-white py-5">
+        <h2 class="heading text-white mb-5 animate__animated animate__fadeInDown">
+            Why Choose <span>SkillSphere?</span>
+        </h2>
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+
+                <!-- Card 1 -->
+                <div class="col-md-3">
+                    <div class="why-card p-4 rounded-4 h-100">
+                        <i class="fa-solid fa-chalkboard-user fs-1 mb-3 text-peach"></i>
+                        <h5 class="fw-bold mb-2">Expert Mentors</h5>
+                        <p>Learn directly from professionals with real-world experience.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-3">
+                    <div class="why-card p-4 rounded-4 h-100">
+                        <i class="fa-solid fa-laptop-code fs-1 mb-3 text-peach"></i>
+                        <h5 class="fw-bold mb-2">Practical Projects</h5>
+                        <p>Apply what you learn through guided hands-on projects.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-3">
+                    <div class="why-card p-4 rounded-4 h-100">
+                        <i class="fa-solid fa-globe fs-1 mb-3 text-peach"></i>
+                        <h5 class="fw-bold mb-2">Global Learning</h5>
+                        <p>Access courses anytime, anywhere with responsive design.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-3">
+                    <div class="why-card p-4 rounded-4 h-100">
+                        <i class="fa-solid fa-certificate fs-1 mb-3 text-peach"></i>
+                        <h5 class="fw-bold mb-2">Certified Programs</h5>
+                        <p>Earn industry-recognized certificates after completion.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- FOOTER -->
     <footer class="footer text-white py-5">
@@ -365,6 +463,44 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- CUSTOM JAVASCRIPT -->
+    <script>
+        // NAVBAR SCROLL
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = "#A87A87";
+                nav.style.transition = "0.4s";
+            }
+            // else {
+            //     nav.style.backgroundColor = "var(--peach)";
+            // }
+        });
+
+        // SECOND SECTION: hover animation WITHOUT touching Animate.css classes
+        document.querySelectorAll(".why-card").forEach(card => {
+            let animRunning = false;
+
+            card.addEventListener("mouseenter", () => {
+                // do nothing if our custom animation already running
+                if (animRunning) return;
+                animRunning = true;
+                card.classList.add("pulse-hover");
+            });
+
+            // Listen for end of our custom animation and clean up
+            card.addEventListener("animationend", (e) => {
+                // match our keyframe name
+                if (e.animationName === "pulse-hover") {
+                    card.classList.remove("pulse-hover");
+                    animRunning = false;
+                }
+            });
+        });
+
+    </script>
 
     <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
