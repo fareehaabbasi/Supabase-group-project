@@ -69,7 +69,7 @@ group.items.forEach((course) => {
 console.log(imageSrc);
 
   const card = `
-    <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="col-lg-4 col-md-6 col-sm-12">
       <div class="course-card">
         <img class="course-image" src="${imageSrc}">
         <div class="course-body">
