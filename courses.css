@@ -8,6 +8,15 @@
     --peach: #E0AFA0;
     --purple: #A87A87;
     --green: #C5CEC1;
+  
+  --peach: #ffb07c;
+
+  --bg-dark: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --text-light: #f5f5f5;
+  --text-muted: #cccccc;
+  --accent: #ff6f61;
+
 }
 
 body {
@@ -338,3 +347,37 @@ body {
         .icons:hover {
             color: var(--peach);
         }
+        #courseDetailContainer {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+
+
+#courseDetailContainer h2 {
+  color: var(--peach);
+}
+
+#courseDetailContainer p {
+  color: var(--text-muted);
+}
+
+#courseDetailContainer button {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+#courseDetailContainer ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--text-light);
+}
+
+#courseDetailContainer li {
+  margin-bottom: 0.5rem;
+  background-color: #3a3a3a;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
