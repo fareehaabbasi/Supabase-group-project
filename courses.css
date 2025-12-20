@@ -1,14 +1,14 @@
 :root {
-    --velvet-black: #000000;
-    --peach-pink: #E44998;
-    --mauve-purple: #A87A87;
-    --sage-green: #C5CEC1;
-    --light-bg: #F7F4F3;
-    --main-theme: #000000;
-    --peach: #E0AFA0;
-    --purple: #A87A87;
-    --green: #C5CEC1;
-  
+  --velvet-black: #000000;
+  --peach-pink: #e44998;
+  --mauve-purple: #a87a87;
+  --sage-green: #c5cec1;
+  --light-bg: #f7f4f3;
+  --main-theme: #000000;
+  --peach: #e0afa0;
+  --purple: #a87a87;
+  --green: #c5cec1;
+
   --peach: #ffb07c;
 
   --bg-dark: #1a1a1a;
@@ -16,345 +16,352 @@
   --text-light: #f5f5f5;
   --text-muted: #cccccc;
   --accent: #ff6f61;
-
 }
 
 body {
-    background-color: rgb(37, 35, 35);
-    font-family: "Poppins", sans-serif;
-    color: var(--velvet-black);
-    line-height: 1.6;
-    cursor: pointer;
-    overflow-x:hidden ;
- 
-   
+  background-color: rgb(37, 35, 35);
+  font-family: "Poppins", sans-serif;
+  color: var(--velvet-black);
+  line-height: 1.6;
+  cursor: pointer;
+  overflow-x: hidden;
 }
 
+/* NAVBAR */
 .navbar {
-    background-color: var(--peach);
-    
+  background-color: var(--peach);
 }
 
 .navbar-logo {
-    height: 70px;
+  height: 70px;
 }
 
 .navbar ul li a:hover {
-    animation: rubberBand 1s;
-    text-decoration: underline 2px solid black;
+  animation: rubberBand 1s;
+  text-decoration: underline 2px solid black;
 }
 
 .button {
-    background-color: var(--purple);
+  background-color: var(--purple);
 }
 
 .button:hover {
-    background-color: #936881;
-    animation: pulse 1s;
+  background-color: #936881;
+  animation: pulse 1s;
 }
 
 .main-head {
+  font-weight: 600;
 
-    font-weight: 600;
-
-    color: #E0AFA0
-
+  color: #e0afa0;
 }
 
 .main-head:hover {
-    text-decoration: underline;
-    transition: opacity 12s ease;
+  text-decoration: underline;
+  transition: opacity 12s ease;
 }
 
 .section-heading {
-    background: var(--peach);
-    color: #2f1818;
-    padding: 12px 24px;
-    border-radius: 12px;
-    margin: 40px 0 30px;
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    position: relative;
-    overflow: hidden;
-    margin-left: 20px;
+  background: var(--peach);
+  color: #2f1818;
+  padding: 12px 24px;
+  border-radius: 12px;
+  margin: 40px 0 30px;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  margin-left: 20px;
 }
 
 .section-heading::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .section-heading:hover::before {
-    left: 100%;
+  left: 100%;
 }
 
 .course-card {
-    
-    color: #fff;
-    background: var(--velvet-black);
-    border-radius: 16px;
-    overflow: hidden;
-    border: 2px solid var(--peach);
-    transition: all 0.4s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    position: relative;
-    padding: 20px;
-    margin:0px  20px 0px 20px;
-    margin-bottom: 15px;
+  color: #fff;
+  background: var(--velvet-black);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--peach);
+  transition: all 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  padding: 20px;
+  margin: 0px 20px 0px 20px;
+  margin-bottom: 15px;
 }
 
 .course-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(229, 73, 152, 0.05), rgba(168, 122, 135, 0.05));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(229, 73, 152, 0.05),
+    rgba(168, 122, 135, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
 .course-card:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .course-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
-    border-color: #eaae9b;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  border-color: #eaae9b;
 }
 
 .course-image {
-    height: 200px;
-    background: linear-gradient(135deg, var(--peach-pink), var(--mauve-purple));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 28px;
-    font-weight: 700;
-    position: relative;
-    overflow: hidden;
+  height: 200px;
+  background: linear-gradient(135deg, var(--peach-pink), var(--mauve-purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
 }
 
 .course-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
 }
 
 .course-body {
-    padding: 20px;
-    flex-grow: 1;
-    position: relative;
-    z-index: 2;
+  padding: 20px;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .course-title {
-    font-weight: 600;
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: white;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: white;
 }
 
 .course-description {
-    color: #fff;
-    font-size: 14px;
-    margin-bottom: 15px;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 
 .course-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    color: var(--mauve-purple);
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--mauve-purple);
+  margin-bottom: 15px;
 }
 
 .course-meta span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .btn-course {
-    background: var(--peach);
-    width: 95%;
-    color: white;
-    border-radius: 10px;
-    padding: 12px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    border: none;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    margin: 10px auto;
+  background: var(--peach);
+  width: 95%;
+  color: white;
+  border-radius: 10px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin: 10px auto;
 }
 
 .btn-course::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+  z-index: -1;
 }
 
 .btn-course:hover::before {
-    left: 100%;
+  left: 100%;
 }
 
 .btn-course:hover {
-    background: var(--mauve-purple);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(168, 122, 135, 0.3);
+  background: var(--mauve-purple);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(168, 122, 135, 0.3);
 }
 
 .course-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: var(--velvet-black);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 500;
-    z-index: 3;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--velvet-black);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 3;
 }
 
+/* FOOTER */
 .footer {
-    background-color: var(--velvet-black);
-    color: white;
-    padding: 40px 0;
-    margin-top: 60px;
-    border-radius: 12px 12px 0 0;
+  background-color: var(--velvet-black);
+  color: white;
+  padding: 40px 0;
+  margin-top: 60px;
+  border-radius: 12px 12px 0 0;
 }
 
 .footer h5 {
-    color: var(--sage-green);
-    margin-bottom: 20px;
+  color: var(--sage-green);
+  margin-bottom: 20px;
 }
 
 .footer a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer a:hover {
-    color: var(--peach-pink);
+  color: var(--peach-pink);
 }
 
 .social-icons a {
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 20px;
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 20px;
 }
-     .footer {
-            background: rgba(255, 255, 255, 0.1);
-            /* light transparent layer */
-            backdrop-filter: blur(15px) saturate(180%);
-            -webkit-backdrop-filter: blur(15px) saturate(180%);
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.4);
-            color: #f5f5f5;
-        }
+.footer {
+  background: rgba(255, 255, 255, 0.1);
+  /* light transparent layer */
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.4);
+  color: #f5f5f5;
+}
 
-        .footer h5 {
-            color: var(--peach);
-            font-weight: 700;
-        }
+.footer h5 {
+  color: var(--peach);
+  font-weight: 700;
+}
 
-        .footer p,
-        .footer a {
-            color: #f0f0f0;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
+.footer p,
+.footer a {
+  color: #f0f0f0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 
-        .footer a:hover {
-            color: var(--green);
-        }
+.footer a:hover {
+  color: var(--green);
+}
 
-        .footer-icon {
-            color: #fff;
-            font-size: 1.3rem;
-            margin-right: 15px;
-            transition: all 0.3s ease;
-        }
+.footer-icon {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
 
-        .footer-icon:hover {
-            color: var(--peach);
-            transform: scale(1.2);
-        }
+.footer-icon:hover {
+  color: var(--peach);
+  transform: scale(1.2);
+}
 
-        .footer hr {
-            border-color: rgba(255, 255, 255, 0.2);
-        }
+.footer hr {
+  border-color: rgba(255, 255, 255, 0.2);
+}
 
-        .quick-links a {
-            position: relative;
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+.quick-links a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-        .quick-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -3px;
-            width: 0%;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.7);
-            transition: width 0.3s ease;
-            border-radius: 2px;
-        }
+.quick-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.7);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
 
-        .quick-links a,
-        :hover {
-            color: var(--peach);
-        }
+.quick-links a,
+:hover {
+  color: var(--peach);
+}
 
-        .quick-links a:hover::after {
-            width: 100%;
-        }
+.quick-links a:hover::after {
+  width: 100%;
+}
 
-        .icons:hover {
-            color: var(--peach);
-        }
-        #courseDetailContainer {
+.icons:hover {
+  color: var(--peach);
+}
+#courseDetailContainer {
   background-color: var(--card-bg);
   border-radius: 12px;
   padding: 2rem;
   margin-top: 2rem;
 }
-
-
 
 #courseDetailContainer h2 {
   color: var(--peach);

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sec | SkillSphere </title>
+    <!-- FAVICON ICON -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <!-- FontAwesome Icon CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- ANIMATE.CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- CUSTOM CSS  -->
+    <style>
+        :root {
+            --main-theme: #000000;
+            --peach: #E0AFA0;
+            --purple: #A87A87;
+            --green: #C5CEC1;
+        }
+
+        body {
+            background-color: var(--main-theme);
+            color: #f5f5f5;
+        }
+
+        /* ALL HEADINGS */
+        .heading span {
+            color: var(--peach);
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: gray;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-logo {
+            height: 80px;
+        }
+
+        .navbar ul li a:hover {
+            animation: rubberBand 1s;
+            text-decoration: underline 2px solid black;
+        }
+
+        .button {
+            background-color: var(--purple);
+        }
+
+        .button:hover {
+            background-color: #936881;
+            animation: pulse 1s;
+        }
+
+        /* HERO SECTION */
+        .about-hero {
+            position: relative;
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
+                url('https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            animation: fadeInDown 1s;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            margin-top: 1rem;
+            animation: fadeInUp 1s;
+        }
+
+        /* MISSION SECTION */
+        .mission-section {
+            padding: 5rem 0;
+        }
+
+        .mission-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            transition: all 0.4s ease;
+        }
+
+        .mission-card:hover {
+            background: rgba(224, 175, 160, 0.1);
+            border-color: var(--peach);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(224, 175, 160, 0.2);
+        }
+
+        .mission-card i {
+            font-size: 3rem;
+            color: var(--peach);
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-card h3 {
+            color: var(--peach);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* STATS SECTION */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(168, 122, 135, 0.2), rgba(224, 175, 160, 0.2));
+            padding: 4rem 0;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-item i {
+            font-size: 3rem;
+            color: var(--peach);
+            margin-bottom: 1rem;
+        }
+
+        .stat-item h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            color: var(--green);
+        }
+
+        /* TEAM SECTION */
+        .team-section {
+            padding: 5rem 0;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .team-card:hover {
+            background: var(--peach);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(224, 175, 160, 0.3);
+        }
+
+        .team-card:hover * {
+            color: #000 !important;
+        }
+
+        .team-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--peach);
+        }
+
+        .team-card h4 {
+            font-weight: 700;
+            color: var(--peach);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card p {
+            color: var(--green);
+        }
+
+        /* VALUES SECTION */
+        .values-section {
+            padding: 5rem 0;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .value-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--peach);
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            background: rgba(224, 175, 160, 0.1);
+            transform: translateX(10px);
+        }
+
+        .value-item i {
+            font-size: 2rem;
+            color: var(--peach);
+            margin-right: 1.5rem;
+            min-width: 50px;
+        }
+
+        .value-item h5 {
+            color: var(--peach);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /*FOOTER */
+        .footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px) saturate(180%);
+            -webkit-backdrop-filter: blur(15px) saturate(180%);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.4);
+            color: #f5f5f5;
+        }
+
+        .footer h5 {
+            color: var(--peach);
+            font-weight: 700;
+        }
+
+        .footer p,
+        .footer a {
+            color: #f0f0f0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer a:hover {
+            color: var(--green);
+        }
+
+        .footer-icon {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-icon:hover {
+            color: var(--peach);
+            transform: scale(1.2);
+        }
+
+        .footer hr {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .quick-links a {
+            position: relative;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .quick-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.7);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .quick-links a:hover {
+            color: var(--peach);
+        }
+
+        .quick-links a:hover::after {
+            width: 100%;
+        }
+
+        .icons:hover {
+            color: var(--peach);
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+
+            .stat-item h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex justify-content-between w-100 fs-5 px-4">
+                    <ul class="navbar-nav d-flex justify-content-evenly w-100 fw-bold">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="about.html">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#mid-sec">COURSES</a>
+                        </li>
+                        <button class="button btn"><a
+                                class="link-underline link-underline-opacity-0 text-black fw-semibold"
+                                href="signup-or-login.html" role="button">SIGNUP</a></button>
+                        <button class="button btn"><a
+                                class="link-underline link-underline-opacity-0 text-black fw-semibold"
+                                href="signup-or-login.html" role="button">LOGIN</a></button>
+                        <li><i class="text-black py-2 fa-solid fa-right-from-bracket"></i></li>
+                        <li><i class="text-black py-2 fa-solid fa-user"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 class="heading text-white">About <span>SkillSphere</span></h1>
+            <p class="text-white">Empowering learners to achieve their dreams through quality education</p>
+        </div>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="mission-card text-center">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h3>Our Mission</h3>
+                        <p>To provide accessible, high-quality learning experiences that empower individuals to develop
+                            new skills and advance their careers in the digital age.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mission-card text-center">
+                        <i class="fa-solid fa-eye"></i>
+                        <h3>Our Vision</h3>
+                        <p>To become the leading platform for skill development, connecting millions of learners with
+                            expert mentors worldwide. Lorem ipsum dolor sit amet consectetur </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mission-card text-center">
+                        <i class="fa-solid fa-heart"></i>
+                        <h3>Our Values</h3>
+                        <p>Excellence, innovation, accessibility, and commitment to lifelong learning drive everything
+                            dolor. Lorem ipsum dolor sit amet. Lorem ipsum dolor,
+                            at SkillSphere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section reveal">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-3 col-6 stat-item">
+                    <i class="fa-solid fa-users"></i>
+                    <h2 class="counter" data-target="50000">0</h2>
+                    <p>Students</p>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <i class="fa-solid fa-book"></i>
+                    <h2 class="counter" data-target="200">0</h2>
+                    <p>Courses</p>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <h2 class="counter" data-target="100">0</h2>
+                    <p>Mentors</p>
+                </div>
+                <div class="col-md-3 col-6 stat-item">
+                    <i class="fa-solid fa-award"></i>
+                    <h2 class="counter" data-target="95">0</h2>
+                    <p>Success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- VALUES SECTION -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="heading text-center text-white mb-5">Our Core <span>Values</span></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="value-item">
+                        <i class="fa-solid fa-star"></i>
+                        <div>
+                            <h5>Excellence</h5>
+                            <p>We strive for excellence in every course, ensuring top-notch content and delivery.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <div>
+                            <h5>Innovation</h5>
+                            <p>We embrace innovative teaching methods and cutting-edge technology.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-handshake"></i>
+                        <div>
+                            <h5>Integrity</h5>
+                            <p>We maintain the highest standards of honesty and ethical behavior.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="value-item">
+                        <i class="fa-solid fa-universal-access"></i>
+                        <div>
+                            <h5>Accessibility</h5>
+                            <p>Education should be accessible to everyone, regardless of background or location.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-people-group"></i>
+                        <div>
+                            <h5>Community</h5>
+                            <p>We foster a supportive learning community where everyone can thrive.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-rocket"></i>
+                        <div>
+                            <h5>Growth</h5>
+                            <p>We believe in continuous improvement and lifelong learning for all.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="heading text-center text-white mb-5">Meet Our <span>Team</span></h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-card">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg"
+                            alt="Team Member">
+                        <h4>John Anderson</h4>
+                        <p>Founder & CEO</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-card">
+                        <img src="https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419_1280.jpg"
+                            alt="Team Member">
+                        <h4>Sarah Mitchell</h4>
+                        <p>Head of Education</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-card">
+                        <img src="https://cdn.pixabay.com/photo/2019/11/03/20/11/portrait-4599553_1280.jpg"
+                            alt="Team Member">
+                        <h4>Michael Chen</h4>
+                        <p>Lead Developer</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="team-card">
+                        <img src="https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419_1280.jpg"
+                            alt="Team Member">
+                        <h4>Emily Davis</h4>
+                        <p>Marketing Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer text-white py-5">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- About -->
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <img src="assets/images/logo.png" alt="logo" class="mb-3" style="height: 160px; width: auto;" />
+                    <p>
+                        SkillSphere helps learners connect with expert mentors to enhance
+                        skills and build bright futures.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="quick-links col-md-3 mb-5 text-center mb-md-0">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Home page</a></li>
+                        <li class="mt-1">
+                            <a href="about.html" class="footer-link">About page</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="index.html#mid-sec" class="footer-link">Courses Details</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="signup-or-login.html" class="footer-link">Signup page</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="signup-or-login.html" class="footer-link">Login page</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="contact col-md-3 mb-4 mb-md-0 text-center text-md-start text-sm-start">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <p>
+                        <i class="fa-solid fa-location-dot me-2"></i> Karachi, Pakistan
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-envelope me-2"></i> info@skillsphere.com
+                    </p>
+                    <p><i class="fa-solid fa-phone me-2"></i> +92 300 1234567</p>
+                </div>
+
+                <!-- Social -->
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Follow Us</h5>
+                    <div class="d-flex justify-content-center justify-content-md-start">
+                        <a href="#" class="footer-icon"><i class="icons fab fa-facebook"></i></a>
+                        <a href="#" class="footer-icon"><i class="icons fab fa-instagram"></i></a>
+                        <a href="#" class="footer-icon"><i class="icons fab fa-linkedin"></i></a>
+                        <a href="#" class="footer-icon"><i class="icons fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.3)" />
+            <div class="text-center small">
+                &copy; 2025 SkillSphere. Designed with ❤ by SheCodes Collective.
+            </div>
+        </div>
+    </footer>
+
+    <!-- CUSTOM JAVASCRIPT -->
+    <script>
+        // NAVBAR SCROLL
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = "#A87A87";
+                nav.style.transition = "0.4s";
+            } else {
+                nav.style.backgroundColor = "gray";
+            }
+        });
+
+        /* Counters */
+        let started = false;
+        const counters = document.querySelectorAll(".counter");
+        window.addEventListener("scroll", () => {
+            const sec = document.querySelector(".stats-section");
+            if (sec.getBoundingClientRect().top < window.innerHeight - 150 && !started) {
+                started = true;
+                counters.forEach(c => {
+                    let count = 0, target = +c.dataset.target;
+                    const update = () => {
+                        count += target / 120;
+                        if (count < target) {
+                            c.innerText = Math.ceil(count);
+                            requestAnimationFrame(update);
+                        } else {
+                            c.innerText = target + (target === 95 ? "%" : "+");
+                        }
+                    };
+                    update();
+                });
+            }
+        });
+    </script>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
