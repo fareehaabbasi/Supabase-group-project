@@ -3,7 +3,7 @@ const courseGroups = [
     title: "Web Development / Programming Courses",
     items: [
       "HTML & CSS (Basics of Web)",
-     
+
       "JavaScript (Basic to Intermediate)",
       "React JS",
       "MongoDB",
@@ -220,12 +220,12 @@ let courseIndex = 1;
 courseGroups.forEach((group) => {
   container.innerHTML += `<div class='col-12'><h3 class='section-heading'>${group.title}</h3></div>`;
 
-group.items.forEach((course) => {
+  group.items.forEach((course) => {
 
-  const imageSrc = picsOfCourses[course]; // <-- pick correct image
-console.log(imageSrc);
+    const imageSrc = picsOfCourses[course]; // <-- pick correct image
+    console.log(imageSrc);
 
-  const card = `
+    const card = `
     <div class="col-lg-4 col-md-6 col-sm-12">
       <div class="course-card">
         <img class="course-image" src="${imageSrc}">
@@ -238,9 +238,9 @@ console.log(imageSrc);
         <a class="btn btn-course" data-course="${course}">View Course</a>
       </div>
     </div>`;
-    
-  container.innerHTML += card;
-});
+
+    container.innerHTML += card;
+  });
 
 });
 
