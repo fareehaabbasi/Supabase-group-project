@@ -248,6 +248,47 @@
         .icons:hover {
             color: var(--peach);
         }
+        .popular-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.4s, background 0.4s;
+  }
+
+  .popular-card:hover {
+    background: linear-gradient(135deg, var(--peach), var(--purple));
+    transform: translateY(-10px);
+  }
+
+  .popular-card h5 {
+    transition: color 0.4s;
+  }
+
+  .popular-card:hover h5 {
+    color: #000;
+  }
+
+  .popular-card p {
+    transition: color 0.4s;
+  }
+
+  .popular-card:hover p {
+    color: #000;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(135deg, var(--peach), var(--purple));
+    color: #000;
+    font-weight: 600;
+    border: none;
+    transition: background 0.4s, transform 0.4s;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(135deg, var(--purple), var(--peach));
+    transform: scale(1.05);
+    color: #fff;
+  }
     </style>
 </head>
 
@@ -397,6 +438,60 @@
             </div>
         </div>
     </section>
+
+    <!-- POPULAR COURSES SECTION -->
+<section class="popular-courses text-white py-5" style="background-color: var(--main-theme);">
+  <div class="container">
+    <h2 class="heading text-white mb-5 animate__animated animate__fadeInDown text-center">
+            Our Popular <span>Courses</span>
+        </h2>
+    <div class="row g-4">
+
+      <!-- Course Card 1 -->
+      <div class="col-md-4 mt-4">
+        <div class="card popular-card h-100 border-0 shadow-sm text-white">
+          <img src="assets/images/full-stack.jpg" class="card-img-top" alt="Course Image">
+          <div class="card-body">
+            <h5 class="card-title mb-2">Full Stack Web Development</h5>
+            <p class="mb-1"><i class="fas fa-user-tie me-2 text-peach"></i>John Doe</p>
+            <p class="mb-1"><i class="fas fa-chart-line me-2 text-peach"></i>Intermediate</p>
+            <p><i class="fas fa-star me-2 text-warning"></i>4.8 (1200 Ratings)</p>
+            <a href="course-detail.html" class="btn btn-gradient mt-3 w-100">View Course</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Card 2 -->
+      <div class="col-md-4">
+        <div class="card popular-card h-100 border-0 shadow-sm text-white">
+          <img src="assets/images/ui ux.jpg" class="card-img-top" alt="Course Image">
+          <div class="card-body">
+            <h5 class="card-title mb-2">UI/UX Design Essentials</h5>
+            <p class="mb-1"><i class="fas fa-user-tie me-2 text-peach"></i>Jane Smith</p>
+            <p class="mb-1"><i class="fas fa-chart-line me-2 text-peach"></i>Beginner</p>
+            <p><i class="fas fa-star me-2 text-warning"></i>4.7 (980 Ratings)</p>
+            <a href="course-detail.html" class="btn btn-gradient mt-3 w-100">View Course</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Card 3 -->
+      <div class="col-md-4">
+        <div class="card popular-card h-100 border-0 shadow-sm text-white">
+          <img src="assets/images/ai-data.jpg" class="card-img-top" alt="Course Image">
+          <div class="card-body">
+            <h5 class="card-title mb-2">Data Science & AI</h5>
+            <p class="mb-1"><i class="fas fa-user-tie me-2 text-peach"></i>Michael Lee</p>
+            <p class="mb-1"><i class="fas fa-chart-line me-2 text-peach"></i>Advanced</p>
+            <p><i class="fas fa-star me-2 text-warning"></i>4.9 (1500 Ratings)</p>
+            <a href="course-detail.html" class="btn btn-gradient mt-3 w-100">View Course</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
 
